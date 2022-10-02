@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import {Input, Space} from "antd";
+
 import {setSearchValue} from "../../store/slices/pokemonSlice";
 import {useAppDispatch} from "../../hooks/hooks";
-import {Input, Space} from "antd";
+
 
 const Search: React.FC = () => {
 
@@ -25,7 +27,6 @@ const Search: React.FC = () => {
                 }}
             />
         </Space>
-
     );
 };
 

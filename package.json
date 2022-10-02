@@ -13,7 +13,6 @@
     "@types/react-dom": "^18.0.6",
     "antd": "^4.23.2",
     "axios": "^0.27.2",
-    "lodash.debounce": "^4.0.8",
     "node-sass": "^7.0.3",
     "randomcolor": "^0.6.2",
     "react": "^18.2.0",
@@ -47,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/lodash.debounce": "^4.0.7"
   }
 }

@@ -17,16 +17,12 @@ type InitialStateProps = {
     filteredPokemons: PokemonItem[],
     categoryList: string[],
     isCategoryClicked: boolean,
-
     searchValue: string,
     activeCategory: string
-
     currentPage: number,
     totalPageCount: number | null
     limitPageCount: number
     currentOffset: number
-
-
     error: boolean,
     isLoading: boolean
 
@@ -36,16 +32,13 @@ export const initialState: InitialStateProps = {
     pokemonList: [],
     filteredPokemons: [],
     categoryList: [],
-
     searchValue: '',
     activeCategory: '',
     isCategoryClicked: false,
-
     currentPage: 0,
     currentOffset: 0,
     limitPageCount: 10,
     totalPageCount: null,
-
     error: false,
     isLoading: false
 };
@@ -91,14 +84,12 @@ const pokemonSlice = createSlice({
                 const removeNestedArray = getAllTypes.flat()
                 state.categoryList = Array.from(new Set(removeNestedArray))
             },
-
             setCurrentPage(state, action: PayloadAction<number>) {
                 state.currentPage = action.payload;
             },
             setCurrentOffsetPage(state, action: PayloadAction<number>) {
                 state.currentOffset = action.payload;
             },
-
             setSearchValue(state, {payload}) {
                 const cloneData = [...state.dataAll];
                 if (state.isCategoryClicked) {
@@ -108,14 +99,11 @@ const pokemonSlice = createSlice({
                 } else {
                     state.pokemonList = cloneData.filter((el: PokemonItem) => (el.name.toLowerCase().includes(payload)));
                 }
-
             },
-
             resetSearchValue: (state) => {
                 state.filteredPokemons = state.dataAll
                 state.pokemonList = state.dataAll
                 state.isCategoryClicked = false;
-
             },
         }
     }
@@ -127,9 +115,7 @@ export const {
     setTotalPageCount, setCurrentOffsetPage
 } = pokemonSlice.actions;
 
-export const pokemonSelector = (state: any) => state.pokemonList;
 export default pokemonSlice.reducer;
-
 
 export function fetchPokemonsList() {
     return async (dispatch: any, getState: () => any) => {
@@ -179,6 +165,7 @@ export function fetchPokemonSingleItem(name: string) {
         .get(`/pokemon/${name}`)
         .then((response) => response.data)
         .catch((er) => {
+            console.log(er);
         });
 }
 export function fetchPokemonColor(id: number) {
@@ -186,5 +173,6 @@ export function fetchPokemonColor(id: number) {
         .get(`/pokemon-color/${id}`)
         .then((response) => response.data)
         .catch((er) => {
+            console.log(er);
         });
 }

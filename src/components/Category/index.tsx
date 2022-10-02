@@ -2,9 +2,9 @@ import React from 'react';
 import {Button} from "antd";
 
 import {resetFilteredPokemons, setFilteredPokemons} from '../../store/slices/pokemonSlice'
+import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 
 import  "./Category.scss";
-import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 
 const Category = () => {
 
@@ -17,11 +17,9 @@ const Category = () => {
         dispatch(setFilteredPokemons(name))
     }
 
-
     return (
         <div className="category-wrapper">
             <h3>Category</h3>
-
             {categoryList?.map((el: string) => <Button
                 style={{margin: 2}}
                 danger={activeCategory === el}

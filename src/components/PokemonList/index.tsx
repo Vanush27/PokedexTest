@@ -21,8 +21,6 @@ const PokemonList = () => {
 
     const isLoading = useAppSelector((state) => state.allListPokemon.isLoading);
 
-
-
     const currentPokemonData = isCategoryClicked ? filteredPokemons : pokemonList
 
     useEffect(() => {
@@ -30,23 +28,18 @@ const PokemonList = () => {
     }, [dispatch, currentPage]);
 
 
-
     return (
-
         <div className="pokemon">
             <h1>Pokemon List</h1>
-
             <Search/>
             <Category/>
-
             <div className='pokemon-list'>
-
                 {isLoading ? <Spinner/> :
                     currentPokemonData?.map((item: PokemonItem, index: number) =>
                         (
                             <CardPokemon key={index} item={item}/>
-                        ))}
-
+                        ))
+                }
             </div>
 
             {!isCategoryClicked && <Pagination/>}

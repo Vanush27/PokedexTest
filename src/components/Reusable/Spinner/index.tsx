@@ -1,5 +1,5 @@
 import React from "react";
-import {Alert, Spin} from 'antd';
+import {Spin} from 'antd';
 
 
 const Spinner: React.FC = () => (
