@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Category from "../Category";
 import CardPokemon from "../CardPokemon";
-import {fetchPokemonsList, PokemonItem, setLoading} from "../../store/slices/pokemonSlice";
+import {fetchPokemonsList, PokemonItem} from "../../store/slices/pokemonSlice";
 
 import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 import Pagination from "../Pagination";
