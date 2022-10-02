@@ -1,0 +1,36 @@
+.pokemon {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 93%;
+  margin: 0 auto;
+  min-height: 350px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.ant-card-meta-description {
+  color: #efbebe !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+}
+
+.card-wrapper img {
+  width: 220px;
+  height: 220px;
+}
